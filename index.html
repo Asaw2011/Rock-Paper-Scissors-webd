@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="heading">
+      <h1>Rock Papper Scissors</h1>
+    </div>
+
+    <div class="Options">
+      <button onclick="play('Rock')">Rock</button>
+      <button onclick="play('Paper')">Paper</button>
+      <button onclick="play('Scissors')">Scissors</button>
+    </div>
+    <div class="main-text flex">
+      <div class="choice">
+        <h4 class="user-choice">Users Choice</h4>
+        <h3 id="user-choice-output"></h3>
+        <img
+          id="user-choice-image"
+          class="output-image"
+          src="https://www.outdooressentialproducts.com/-/media/project/ufpi/outdoor-essentials/products/images/landscape/rocks/204923_small-landscape-rock-grey/outdoor-essentials_gray-landscape-small-rock_image_204923_website.png?h=1000&iar=0&w=1000&sc_lang=en&hash=56001ABA4842479768A556292C58B6E6"
+        />
+      </div>
+      <div class="choice">
+        <h4 id="computer-choice">Computer Choice</h4>
+        <h3 id="computer-choice-output"></h3>
+        <img
+          id="computer-choice-image"
+          class="output-image"
+          src="https://www.outdooressentialproducts.com/-/media/project/ufpi/outdoor-essentials/products/images/landscape/rocks/204923_small-landscape-rock-grey/outdoor-essentials_gray-landscape-small-rock_image_204923_website.png?h=1000&iar=0&w=1000&sc_lang=en&hash=56001ABA4842479768A556292C58B6E6"
+        />
+      </div>
+    </div>
+    <div class="results">
+      <h1 id="result">Result</h1>
+    </div>
+
+    <script>
+      let options = ["Rock", "Paper", "Scissors"];
+
+      let resultTag = document.getElementById("result");
+
+      let userText = document.getElementById("user-choice-output");
+      let computerText = document.getElementById("computer-choice-output");
+
+      let userImage = document.getElementById("user-choice-image");
+      let computerImage = document.getElementById("computer-choice-image");
+
+      function play(userChoice) {
+        userText.innerText = userChoice;
+        let choice = Math.floor(Math.random() * 10) % 3;
+        let computerChoice = options[choice];
+        computerText.innerText = computerChoice;
+
+        if (userChoice == computerChoice) {
+          resultTag.innerText = "Draw";
+          if (userChoice == "Rock") {
+            userImage.src = "Rock.png";
+            computerImage.src = "Rock.png";
+          } else if (userChoice == "Paper") {
+            userImage.src = "Paper.png";
+            computerImage.src = "Paper.png";
+          } else {
+            userImage.src = "Scissors.png";
+            computerImage.src = "Scissors.png";
+          }
+        } else if (userChoice == "Rock") {
+          userImage.src = "Rock.png";
+          if (computerChoice == "Paper") {
+            computerImage.src = "Paper.png";
+            resultTag.innerText = "You Lose";
+          } else {
+            computerImage.src = "Scissors.png";
+            resultTag.innerText = "You Won";
+          }
+        } else if (userChoice == "Paper") {
+          userImage.src = "Paper.png";
+          if (computerChoice == "Scissors") {
+            computerImage.src = "Scissors.png";
+            resultTag.innerText = "You Lose";
+          } else {
+            computerImage.src = "Rock.png";
+            resultTag.innerText = "You Won";
+          }
+        } else {
+          userImage.src = "Scissors.png";
+          if (computerChoice == "Rock") {
+            computerImage.src = "Rock.png";
+            resultTag.innerText = "You Lose";
+          } else {
+            computerImage.src = "Paper.png";
+            resultTag.innerText = "You Won";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

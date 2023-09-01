@@ -1,0 +1,66 @@
+.flex{
+    display: flex;
+}
+
+.results{
+    border:solid ;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.choice{
+    border: solid;
+    width: 50%;
+    text-align: center;
+    border-radius: 10px;
+
+}
+
+.choice img{
+    width: 50%;
+    border: solid;
+    border-radius: 10px;
+}
+
+.heading {
+    text-align: center;
+    font-size: xx-large;
+}
+
+.c-choice {
+    font-size: 75px;
+    text-align: right;
+    margin: 100px;
+    
+}
+
+.u-choice {
+    font-size: 75px;
+    text-align: left;
+    margin: 100px;
+
+}
+
+#computerChoice {
+    font-size: 100px;
+    margin: 225px;
+}
+
+button{
+    margin: 5px;
+    background-color: peachpuff;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+button:hover{
+    background-color: yellow   ;
+}
+
+body{
+    background-color: lightsteelblue;
+}
+
+img{
+    padding: 20px;
+}
